@@ -25,7 +25,8 @@
                 android:text="Comment"
                 android:textAlignment="center"
                 android:textSize="20dp"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp"
+                />
         </RelativeLayout>
 </com.google.android.material.card.MaterialCardView>
 

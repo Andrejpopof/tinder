@@ -21,6 +21,7 @@ public class DetailsActivity extends AppCompatActivity {
         ArrayList<Element> comentari =new ArrayList<>();
         comentari.add(new Element(R.drawable.ic_android_black_24dp,"comment1"));
         comentari.add(new Element(R.drawable.ic_block_black_24dp,"comment2"));
+        //POISHE KOMENTARIIIIII
 
     }
 }
