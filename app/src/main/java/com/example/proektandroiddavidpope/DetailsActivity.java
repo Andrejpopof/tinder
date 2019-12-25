@@ -19,7 +19,6 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        Intent intent = getIntent();
 
         ArrayList<Element> comentari =new ArrayList<>();
         comentari.add(new Element(R.drawable.ic_android_black_24dp,"comment1"));

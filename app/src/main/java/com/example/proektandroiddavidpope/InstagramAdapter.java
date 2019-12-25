@@ -1,4 +1,4 @@
-package com.example.recyclercardview;
+package com.example.proektandroiddavidpope;
 
 
 import android.content.Context;
@@ -18,7 +18,6 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.proektandroiddavidpope.DetailsActivity;
 import com.example.proektandroiddavidpope.R;
 
 import java.util.ArrayList;
@@ -27,12 +26,12 @@ import java.util.List;
 public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.InstagramViewHolder> {
 
     private Context mCtx;
-    private ArrayList<com.example.recyclercardview.Instagram_Class> posts;
+    private ArrayList<Instagram_Class> posts;
     private GradientDrawable mGradientDrawable;
 
     static final String img_key="Image path";
 
-    public InstagramAdapter(Context mCtx, ArrayList<com.example.recyclercardview.Instagram_Class> posts) {
+    public InstagramAdapter(Context mCtx, ArrayList<Instagram_Class> posts) {
         this.mCtx = mCtx;
         this.posts = posts;
 
@@ -60,7 +59,7 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.Inst
 
     @Override
     public void onBindViewHolder(@NonNull InstagramViewHolder holder, int position) {
-        com.example.recyclercardview.Instagram_Class post = posts.get(position);
+        Instagram_Class post = posts.get(position);
         holder.bindTo(post);
         /**holder.User.setText(String.valueOf(post.getUser()));
          holder.Description.setText(post.getDescription());
@@ -81,7 +80,7 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.Inst
         private ImageView imageView;
         private TextView User, location, datePosted, likes, Description;
         private Context mContext;
-        private com.example.recyclercardview.Instagram_Class currentpost;
+        private Instagram_Class currentpost;
         private GradientDrawable mGradientDrawable;
 
         public InstagramViewHolder(Context context, View itemView, GradientDrawable gradientDrawable) {
@@ -94,14 +93,9 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.Inst
             likes = (TextView)itemView.findViewById(R.id.NumberOfLikes);
             Description = (TextView)itemView.findViewById(R.id.Description);
             mGradientDrawable=gradientDrawable;
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    v.getContext().startActivity(new Intent(v.getContext(),DetailsActivity.class));
-                }
-            });
         }
-        public void bindTo(com.example.recyclercardview.Instagram_Class post) {
+
+        public void bindTo(Instagram_Class post) {
             User.setText(post.getUser().getUsername());
             location.setText(post.getLocation());
             datePosted.setText(post.getDatePosted());

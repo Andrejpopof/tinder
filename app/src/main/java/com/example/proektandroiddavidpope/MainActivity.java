@@ -1,18 +1,15 @@
-package com.example.recyclercardview;
+package com.example.proektandroiddavidpope;
 
-import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
-import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
-import com.example.proektandroiddavidpope.DetailsActivity;
 import com.example.proektandroiddavidpope.R;
 
 import java.util.ArrayList;
@@ -21,14 +18,11 @@ import java.util.List;
 
 
 
-
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     InstagramAdapter adapter;
     ArrayList<Instagram_Class> posts;
-
-    static final String img_key="Image path";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         /**instaimages.recycle();**/
         adapter.notifyDataSetChanged();
     }
+
 }
 
 /**public void resetInsta(View view){

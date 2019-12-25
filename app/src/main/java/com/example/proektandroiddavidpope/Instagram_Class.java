@@ -1,12 +1,10 @@
-package com.example.recyclercardview;
+package com.example.proektandroiddavidpope;
 
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 
 import androidx.annotation.DrawableRes;
-
-import com.example.proektandroiddavidpope.DetailsActivity;
 
 import java.util.Date;
 
@@ -17,8 +15,8 @@ public class Instagram_Class {
     private final String datePosted;
     private final Users user;
     private final String location;
+    //Element
 
-    static final String img_key="Image path";
 
     public Instagram_Class(int imgPath, String brojLajkovi, String description, String datePosted, Users user, String location) {
         this.imgPath = imgPath;
@@ -51,11 +49,12 @@ public class Instagram_Class {
         return location;
     }
 
-    /**static Intent starter(Context context, @DrawableRes int imageResId) {
-        Intent detailIntent = new Intent(context, DetailsActivity.class);
-        detailIntent.putExtra(img_key, imageResId);
-        return detailIntent;
-    }**/
+//    static Intent starter(Context context, @DrawableRes int imgPath){
+//       // Intent intent = new Intent(context);
+//        intent.putExtra(img_key,imgPath);
+//        return intent;
+//    }
+
 }
 
 

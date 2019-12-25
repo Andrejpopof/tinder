@@ -1,10 +1,10 @@
-package com.example.recyclercardview;
+package com.example.proektandroiddavidpope;
 
-public class User {
+public class Users {
     private String username;
     private String fullname;
 
-    public User(String username, String fullname) {
+    public Users(String username, String fullname) {
         this.username = username;
         this.fullname = fullname;
     }
