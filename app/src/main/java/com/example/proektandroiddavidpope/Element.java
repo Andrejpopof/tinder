@@ -4,10 +4,10 @@ public class Element {
     private int mImageResource;
     private String mComment;
 
-    Element(int ImageResource,String Comment)
+    Element(int ImageResource,String comment)
     {
         mImageResource=ImageResource;
-        mComment= Comment;
+        mComment= comment;
     }
 
     public int getmImageResource() {
