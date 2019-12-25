@@ -51,11 +51,11 @@ public class Instagram_Class {
         return location;
     }
 
-    static Intent starter(Context context, @DrawableRes int imageResId) {
+    /**static Intent starter(Context context, @DrawableRes int imageResId) {
         Intent detailIntent = new Intent(context, DetailsActivity.class);
         detailIntent.putExtra(img_key, imageResId);
         return detailIntent;
-    }
+    }**/
 }
 
 

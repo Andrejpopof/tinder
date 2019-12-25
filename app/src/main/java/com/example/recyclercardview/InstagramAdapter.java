@@ -97,8 +97,7 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.Inst
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent detailIntent = Instagram_Class.starter(mCtx, currentpost.getImgPath());
-                    mCtx.startActivity(detailIntent);
+                    v.getContext().startActivity(new Intent(v.getContext(),DetailsActivity.class));
                 }
             });
         }
