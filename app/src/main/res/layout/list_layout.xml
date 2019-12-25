@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="5dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarAlwaysDrawHorizontalTrack="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/User"
+            android:hint="User"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="259dp"
+                android:layout_height="match_parent"
+                android:id="@+id/Location"
+                android:hint="location"/>
+
+            <TextView
+                android:id="@+id/DatePosted"
+                android:layout_width="151dp"
+                android:layout_height="match_parent"
+                android:hint="datePosted"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/Slika"
+            android:layout_width="match_parent"
+            android:layout_height="390dp"
+            android:visibility="visible"
+            android:clickable="true"
+            android:adjustViewBounds="true"
+            />
+
+        <TextView
+            android:id="@+id/NumberOfLikes"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:hint="likes" />
+
+        <TextView
+            android:id="@+id/Description"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:hint="Description" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
