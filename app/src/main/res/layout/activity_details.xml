@@ -40,7 +40,7 @@
             android:id="@+id/Objavi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Објави"
+            android:text="Post"
             android:layout_gravity="center"
             android:backgroundTint="@android:color/transparent"
             android:layout_marginLeft="0.5dp"/>
