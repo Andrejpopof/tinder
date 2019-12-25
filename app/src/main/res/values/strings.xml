@@ -1,3 +1,39 @@
 <resources>
     <string name="app_name">ProektAndroidDavidPope</string>
+
+    <string-array name="Usernames">
+        <item>KingJames</item>
+        <item>Kyrie Irving</item>
+        <item>Russell Westbrook</item>
+    </string-array>
+
+    <string-array name="Locations">
+        <item>Los Angeles - California</item>
+        <item>Brooklyn - New York</item>
+        <item>Houston - Texas</item>
+    </string-array>
+
+    <string-array name="Likes">
+        <item>950 352</item>
+        <item>980 554</item>
+        <item>658 220</item>
+    </string-array>
+
+    <string-array name="dates">
+        <item>12-03-2019</item>
+        <item>15-06-2019</item>
+        <item>24-08-2019</item>
+    </string-array>
+
+    <string-array name="Descriptions">
+        <item>I am the GOAT</item>
+        <item>aknaklgmalkgma</item>
+        <item>alknflkamflka</item>
+    </string-array>
+
+    <array name="images">
+        <item>@drawable/lebron</item>
+        <item>@drawable/kyrie</item>
+        <item>@drawable/russ</item>
+    </array>
 </resources>

@@ -3,6 +3,7 @@ package com.example.proektandroiddavidpope;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Adapter;
 
@@ -17,6 +18,8 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+
+        Intent intent = getIntent();
 
         ArrayList<Element> comentari =new ArrayList<>();
         comentari.add(new Element(R.drawable.ic_android_black_24dp,"comment1"));
