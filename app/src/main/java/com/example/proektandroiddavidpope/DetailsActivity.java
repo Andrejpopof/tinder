@@ -14,11 +14,13 @@ public class DetailsActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-
+        Intent intent = getIntent();
 
         ArrayList<Element> comentari =new ArrayList<>();
         comentari.add(new Element(R.drawable.ic_android_black_24dp,"comment1"));

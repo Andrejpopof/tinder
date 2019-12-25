@@ -29,7 +29,6 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.Inst
     private ArrayList<Instagram_Class> posts;
     private GradientDrawable mGradientDrawable;
 
-    static final String img_key="Image path";
 
     public InstagramAdapter(Context mCtx, ArrayList<Instagram_Class> posts) {
         this.mCtx = mCtx;
@@ -93,7 +92,20 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.Inst
             likes = (TextView)itemView.findViewById(R.id.NumberOfLikes);
             Description = (TextView)itemView.findViewById(R.id.Description);
             mGradientDrawable=gradientDrawable;
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    v.getContext().startActivity(new Intent(v.getContext(),DetailsActivity.class));
+                }
+            });
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    v.getContext().startActivity(new Intent(v.getContext(),DetailsActivity.class));
+                }
+            });
         }
+
 
         public void bindTo(Instagram_Class post) {
             User.setText(post.getUser().getUsername());
