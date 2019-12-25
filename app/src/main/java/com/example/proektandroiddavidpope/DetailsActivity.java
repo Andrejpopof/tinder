@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Adapter;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
@@ -43,7 +44,6 @@ public class DetailsActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-
-
+        
     }
 }
