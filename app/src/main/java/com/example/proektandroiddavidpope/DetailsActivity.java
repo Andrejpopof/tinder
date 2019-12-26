@@ -4,10 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Adapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -24,9 +28,9 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
         Intent intent = getIntent();
 
-        Intent intent = getIntent();
 
-        ArrayList<Element> komentari =new ArrayList<>();
+
+        final ArrayList<Element> komentari =new ArrayList<>();
         komentari.add(new Element(R.drawable.kd,"You look fly my G"));
         komentari.add(new Element(R.drawable.kuzma,"Bro u the GOAT"));
         komentari.add(new Element(R.drawable.charly,"Seeesh"));
@@ -47,6 +51,21 @@ public class DetailsActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
-        
+        final EditText editText =(EditText) findViewById(R.id.editText);
+        Button btn = (Button) findViewById(R.id.Objavi);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String kom=editText.getText().toString();
+                if (kom.length()==0)
+                {
+                    Toast.makeText(getApplicationContext(),"Please insert comment !",Toast.LENGTH_SHORT).show();
+
+                }
+                else
+                    komentari.add(new Element(R.drawable.lj,kom));
+                editText.setText("");
+            }
+        });
     }
 }
