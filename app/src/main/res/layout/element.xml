@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -23,12 +23,13 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/slika"
                 android:text="Comment"
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textSize="20sp"
+                android:textColor="@color/colorPrimaryDark"
                 android:layout_marginStart="8dp"
                 />
         </RelativeLayout>
-</com.google.android.material.card.MaterialCardView>
+</androidx.cardview.widget.CardView>
 
 
 
