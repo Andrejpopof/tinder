@@ -26,6 +26,7 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        setTitle("Comments");
         Intent intent = getIntent();
 
 
@@ -37,7 +38,7 @@ public class DetailsActivity extends AppCompatActivity {
         komentari.add(new Element(R.drawable.lj,"Good luck in the finals my guy"));
         komentari.add(new Element(R.drawable.daisy,"I am just promoting my instagram page"));
         komentari.add(new Element(R.drawable.russ,"bang bang"));
-        komentari.add(new Element(R.drawable.klay,"SPLASH BROS U UP ?"));
+        komentari.add(new Element(R.drawable.klay,"splash bros u up ?"));
         komentari.add(new Element(R.drawable.dileta,"I want an interview later pls"));
         komentari.add(new Element(R.drawable.charly,"2020 Champs right here"));
         komentari.add(new Element(R.drawable.russ,"gg ez go next"));
