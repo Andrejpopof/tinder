@@ -3,8 +3,10 @@ package com.example.proektandroiddavidpope;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,10 +19,19 @@ public class ElementAdapter extends RecyclerView.Adapter<ElementAdapter.ElementV
 
         public ImageView mImageView;
         public TextView mTextView;
+        public ImageButton mButton;
         public ElementViewHolder(@NonNull View itemView) {
             super(itemView);
             mImageView=itemView.findViewById(R.id.slika);
             mTextView=itemView.findViewById(R.id.komentar);
+            mButton=itemView.findViewById(R.id.like);
+            
+            mButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(v.getContext(), "You Liked the comment", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 

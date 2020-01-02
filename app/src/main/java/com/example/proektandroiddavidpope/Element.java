@@ -3,6 +3,7 @@ package com.example.proektandroiddavidpope;
 public class Element {
     private int mImageResource;
     private String mComment;
+    private int mButton;
 
     Element(int ImageResource,String comment)
     {
@@ -17,4 +18,6 @@ public class Element {
     public String getmComment() {
         return mComment;
     }
+
+    public int getmButton () { return  mButton;}
 }
