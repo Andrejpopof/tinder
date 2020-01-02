@@ -10,12 +10,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.proektandroiddavidpope.Models.CommentModel;
+import com.example.proektandroiddavidpope.Models.PostModel;
 import com.example.proektandroiddavidpope.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -67,6 +74,29 @@ public class MainActivity extends AppCompatActivity {
          }**/
         /**instaimages.recycle();**/
         adapter.notifyDataSetChanged();
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://5ddfd7adbb46ce001434bca8.mockapi.io/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        JsonPlaceHolderApi jsonPlaceHolderApi =retrofit.create(JsonPlaceHolderApi.class);
+        Call<List<PostModel>> call= jsonPlaceHolderApi.getPosts();
+
+        call.enqueue(new Callback<List<PostModel>>() {
+            @Override
+            public void onResponse(Call<List<PostModel>> call, Response<List<PostModel>> response) {
+                List<PostModel> posts =response.body();
+                List<CommentModel> comments;
+                for(PostModel post : posts){
+                    //SAMO TUKA NAPOLNI GI POSTOVITE (NASHMINKAJ GO POSTOT I KORISTI ISTI INFORMACII KO SO SE DADENI OD NEA NA SERVEROT SO ISTI TIPOVI NA PROMENLIVI)
+                    //AKO PROBAS DA JA RUNNES KE PUKNE RADI OVOJ DEL SO NE E DOVRSEN OD RETROFITOT NADOLE <3
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<PostModel>> call, Throwable t) {
+
+            }
+        });
     }
 
 }
