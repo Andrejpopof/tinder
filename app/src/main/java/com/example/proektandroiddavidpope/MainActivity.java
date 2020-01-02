@@ -87,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
                 List<PostModel> posts =response.body();
                 List<CommentModel> comments;
                 for(PostModel post : posts){
-                  //SAMO TUKA NAPOLNI GI POSTOVITE (NASHMINKAJ GO POSTOT I KORISTI ISTI INFORMACII KO SO SE DADENI OD NEA NA SERVEROT SO ISTI TIPOVI NA PROMENLIVI)
+                    //SAMO TUKA NAPOLNI GI POSTOVITE (NASHMINKAJ GO POSTOT I KORISTI ISTI INFORMACII KO SO SE DADENI OD NEA NA SERVEROT SO ISTI TIPOVI NA PROMENLIVI)
+                    //AKO PROBAS DA JA RUNNES KE PUKNE RADI OVOJ DEL SO NE E DOVRSEN OD RETROFITOT NADOLE <3
                 }
             }
 
@@ -96,10 +97,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
     }
 
 }
