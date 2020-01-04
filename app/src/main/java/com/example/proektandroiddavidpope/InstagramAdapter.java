@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.proektandroiddavidpope.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,46 +28,30 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.Inst
 
     private Context mCtx;
     private ArrayList<Instagram_Class> posts;
-    private GradientDrawable mGradientDrawable;
-
 
     public InstagramAdapter(Context mCtx, ArrayList<Instagram_Class> posts) {
         this.mCtx = mCtx;
         this.posts = posts;
-
-        mGradientDrawable = new GradientDrawable();
-        mGradientDrawable.setColor(Color.GRAY);
-
-        //Make the placeholder same size as the images
-        Drawable drawable = ContextCompat.getDrawable
-                (mCtx,R.drawable.lebron);
-        if(drawable != null) {
-            mGradientDrawable.setSize(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-        }
     }
 
     @NonNull
     @Override
     public InstagramViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        /**LayoutInflater inflater = LayoutInflater.from(mCtx);
-         View view = inflater.inflate(R.layout.list_layout, null);
-         InstagramViewHolder holder = new InstagramViewHolder(view);
-         return holder;**/
-        return new InstagramViewHolder(mCtx, LayoutInflater.from(mCtx).
-                inflate(R.layout.list_layout, parent, false), mGradientDrawable);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_layout,parent,false);
+        InstagramViewHolder vh = new InstagramViewHolder(v);
+        return vh;
     }
 
     @Override
     public void onBindViewHolder(@NonNull InstagramViewHolder holder, int position) {
         Instagram_Class post = posts.get(position);
-        holder.bindTo(post);
-        /**holder.User.setText(String.valueOf(post.getUser()));
-         holder.Description.setText(post.getDescription());
-         holder.location.setText(post.getLocation());
-         holder.datePosted.setText(String.valueOf(post.getDatePosted()));
-         holder.likes.setText(String.valueOf(post.getBrojLajkovi()));
-
-         holder.imageView.setImageResource(R.drawable.charly);**/
+        Picasso.get().load(post.getPhoto()).into(holder.photo);
+        Picasso.get().load(post.getUserAvatar()).into(holder.userAvatar);
+        holder.id.setText(post.getId());
+        holder.createdAt.setText(post.getCreatedAt());
+        holder.username.setText(post.getUsername());
+        holder.likes.setText(post.getLikes());
+        holder.comments.setText((CharSequence) post.getComments());
     }
 
     @Override
@@ -76,47 +61,30 @@ public class InstagramAdapter extends RecyclerView.Adapter<InstagramAdapter.Inst
 
     public class InstagramViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView imageView;
-        private TextView User, location, datePosted, likes, Description;
-        private Context mContext;
-        private Instagram_Class currentpost;
-        private GradientDrawable mGradientDrawable;
+        private ImageView photo,userAvatar;
+        private TextView id,createdAt,username,likes,comments;
 
-        public InstagramViewHolder(Context context, View itemView, GradientDrawable gradientDrawable) {
+        public InstagramViewHolder(View itemView) {
             super(itemView);
-            mContext=context;
-            imageView =(ImageView)itemView.findViewById(R.id.Slika);
-            User = (TextView) itemView.findViewById(R.id.User);
-            location = (TextView)itemView.findViewById(R.id.Location);
-            datePosted = (TextView)itemView.findViewById(R.id.DatePosted);
+            comments=(TextView)itemView.findViewById(R.id.Comments);
+            photo =(ImageView)itemView.findViewById(R.id.Slika);
+            userAvatar = (ImageView) itemView.findViewById(R.id.UserAvatar);
+            id = (TextView) itemView.findViewById(R.id.postID);
+            createdAt = (TextView) itemView.findViewById(R.id.DatePosted);
             likes = (TextView)itemView.findViewById(R.id.NumberOfLikes);
-            Description = (TextView)itemView.findViewById(R.id.Description);
-            mGradientDrawable=gradientDrawable;
+            username = (TextView) itemView.findViewById(R.id.User);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     v.getContext().startActivity(new Intent(v.getContext(),DetailsActivity.class));
                 }
             });
-            imageView.setOnClickListener(new View.OnClickListener() {
+            photo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     v.getContext().startActivity(new Intent(v.getContext(),DetailsActivity.class));
                 }
             });
-        }
-
-
-        public void bindTo(Instagram_Class post) {
-            User.setText(post.getUser().getUsername());
-            location.setText(post.getLocation());
-            datePosted.setText(post.getDatePosted());
-            likes.setText(post.getBrojLajkovi());
-            Description.setText(post.getDescription());
-            currentpost=post;
-            imageView.setImageDrawable(mCtx.getResources().getDrawable(currentpost.getImgPath()));
-            /**Glide.with(mContext).load(post.
-             getImgPath()).placeholder(mGradientDrawable).into(imageView);**/
         }
     }
 }
