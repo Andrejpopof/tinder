@@ -24,15 +24,19 @@ public class PostModel {
     @SerializedName("likes")
     @Expose
     private Integer likes;
+
     @SerializedName("comments")
     @Expose
     private List<CommentModel> comments = null;
 
-    public PostModel(String userName, Integer likes)
-    {
+    public PostModel(String id, String createdAt, String photo, String userAvatar, String userName, Integer likes, List<CommentModel> comments) {
+        this.id = id;
+        this.createdAt = createdAt;
+        this.photo = photo;
+        this.userAvatar = userAvatar;
         this.userName = userName;
         this.likes = likes;
-
+        this.comments = comments;
     }
 
     public String getId() {

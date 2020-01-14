@@ -8,17 +8,30 @@
     card_view:cardCornerRadius="5dp"
     card_view:cardElevation="5dp">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbarAlwaysDrawHorizontalTrack="true">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/User"
-            android:hint="User"
-            />
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/UserAvatar"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/User"
+                android:hint="User"
+                />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,16 +39,16 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="259dp"
+                android:id="@+id/postID"
+                android:layout_width="70dp"
                 android:layout_height="match_parent"
-                android:id="@+id/Location"
-                android:hint="location"/>
+                android:hint="postID" />
 
             <TextView
                 android:id="@+id/DatePosted"
-                android:layout_width="151dp"
+                android:layout_width="329dp"
                 android:layout_height="match_parent"
-                android:hint="datePosted"/>
+                android:hint="datePosted" />
         </LinearLayout>
 
         <ImageView
@@ -49,15 +62,15 @@
 
         <TextView
             android:id="@+id/NumberOfLikes"
-            android:layout_width="67dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
             android:hint="likes" />
 
         <TextView
-            android:id="@+id/Description"
             android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:hint="Description" />
+            android:layout_height="60dp"
+            android:id="@+id/Comments"
+            />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -6,55 +6,57 @@ import android.location.Location;
 
 import androidx.annotation.DrawableRes;
 
+import com.example.proektandroiddavidpope.Models.CommentModel;
+
 import java.util.Date;
+import java.util.List;
 
 public class Instagram_Class {
-    private final int imgPath;
-    private final String brojLajkovi;
-    private final String description;
-    private final String datePosted;
-    private final Users user;
-    private final String location;
-    //Element
+    private final String id;
+    private final String createdAt;
+    private final String photo;
+    private final String userAvatar;
+    private final String username;
+    private final int likes;
+    private final String comments;
 
-
-    public Instagram_Class(int imgPath, String brojLajkovi, String description, String datePosted, Users user, String location) {
-        this.imgPath = imgPath;
-        this.brojLajkovi = brojLajkovi;
-        this.description = description;
-        this.datePosted = datePosted;
-        this.user = user;
-        this.location = location;
+    public Instagram_Class(String id, String createdAt, String photo, String userAvatar, String username, int likes,String comments) {
+        this.id = id;
+        this.createdAt = createdAt;
+        this.photo = photo;
+        this.userAvatar = userAvatar;
+        this.username = username;
+        this.likes = likes;
+        this.comments = comments;
     }
 
-    public int getImgPath() {
-        return imgPath;
+    public String getId() {
+        return id;
     }
 
-    public String getBrojLajkovi() {
-        return brojLajkovi;
+    public String getCreatedAt() {
+        return createdAt;
     }
 
-    public String getDescription() {
-        return description;
+    public String getPhoto() {
+        return photo;
     }
 
-    public String getDatePosted() { return datePosted; }
-
-    public Users  getUser() {
-        return user;
+    public String getUserAvatar() {
+        return userAvatar;
     }
 
-    public String getLocation() {
-        return location;
+    public String getUsername() {
+        return username;
     }
 
-//    static Intent starter(Context context, @DrawableRes int imgPath){
-//       // Intent intent = new Intent(context);
-//        intent.putExtra(img_key,imgPath);
-//        return intent;
-//    }
+    public int getLikes() {
+        return likes;
+    }
 
+    public String getComments() {
+        return comments;
+    }
 }
 
 
